@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="flag=!flag">Toggle Flag</button>
+        <p v-if="flag">请求成功---被v-if控制的元素会被渲染到页面上</p>
+        <p v-show="flag">请求成功---被v-show控制的元素会被渲染到页面上</p>
+        <!-- 需要频繁切换尽量用v-show
+        不频繁切换尽量用v-if -->
+
+    </div>
+    <script>
+        const vm = {
+            data: function () {
+                return {
+                    flag: false,
+                }
+            }
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+
+
+</body>
+
+</html>

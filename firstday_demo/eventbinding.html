@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+     <h3>count的值为：{{count}}</h3> 
+     <button v-on:click="addCount">+1</button>
+     <button @click="count+=1">+1</button>
+    </div>
+
+    <script>
+        const vm={
+            data:function(){
+                return{
+                    count:0,
+                }
+            },
+            methods:{
+                addCount(){
+                    this.count+=1
+                },
+            },
+        }
+        const app=Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
