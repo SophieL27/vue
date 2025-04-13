@@ -152,7 +152,10 @@ const goToRegister = () => {
                 <el-progress :percentage="course.progress" :stroke-width="8" />
               </div>
               <div class="teacher">讲师：{{ course.teacher }}</div>
-              <el-button type="primary" class="continue-btn">继续学习</el-button>
+              <div class="button-group">
+                <el-button type="primary" @click="router.push(`/course/${course.id}`)" class="continue-btn">继续学习</el-button>
+                <el-button type="success" @click="router.push(`/test/${course.id}`)" class="test-btn">参加测试</el-button>
+              </div>
             </div>
           </el-card>
         </el-col>
@@ -323,6 +326,17 @@ const goToRegister = () => {
 }
 
 .continue-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.test-btn {
   width: 100%;
 }
 
